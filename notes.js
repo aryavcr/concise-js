@@ -31,7 +31,17 @@ console.log(c.sports);
 
 
 
-//data types = primitive & reference
+//data types, primitive & reference
+//primitives are stored directly in the stack whereas reference types store a pointer in the stack that points to data on the heap. Primitives (string, boolean, number, undefined, null, symbol, bigint) hold their value directly. Reference types (object, array, function & all built-in objects) hold a memory address. Two variables can hold the same address and point to the same object.
+//equating two ref variables = same address/shared pointer
+//equating two primitve variables = independent copy for each
+let obj1 = { x: 10 };
+let obj2 = obj1; // same address
+obj2.x = 99;
+console.log(obj1.x); // 99
+console.log(obj2.x); // 99
+
+//pop & spread
 var arr = [1,2.3,4];
 var b = arr;
 b.pop()
@@ -40,10 +50,11 @@ var c = [...arr];
 c.pop();
 //this pops only from c not arr
 
+//bug typeof null === "object" // true but null is a primitive
 
 //conditional logic
 //boolean
-// ! = not !! = not not / reverse
+// ! = not , !! = not not / reverse
 //a string with no length is actually false
 console.log(!!'');
 console.log(!!'hi');
