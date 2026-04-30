@@ -1,4 +1,5 @@
 //main.bundle.js bundles all scripts together in exact same order
+
 //variables(declaration -> initialization)
 var a; //undefined
 console.log(a);
@@ -7,8 +8,11 @@ console.log(a);
 //variables(declaration + initialization)
 var b = [1,2];   
 console.log(b);
-// we use let over var due to hoisting & block space issues
 
+// let over var
+// we use let over var due to hoisting & block space issues
+// let is hoisted, but sits in a Temporal Dead Zone(TDZ) until declaration & throws a "ReferenceError" until declared whereas var assigns "undefined" /
+// let is confined to its block(loops/functions) whereas var doesn't.
 
 
 
@@ -31,9 +35,7 @@ console.log(c.sports);
 var arr = [1,2.3,4];
 var b = arr;
 b.pop()
-//this will pop 4 from both b & arr, as () is a reference data type
-//but if we copy a reference data type with spread, it copies it as a
-//primitive data type, storing it seperately
+//this will pop 4 from both b & arr, as () is a reference data type but if we copy a reference data type with spread, it copies it as a primitive data type, storing it seperately
 var c = [...arr];
 c.pop();
 //this pops only from c not arr
